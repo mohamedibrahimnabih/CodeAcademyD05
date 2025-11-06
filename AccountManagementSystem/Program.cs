@@ -1,10 +1,27 @@
-﻿namespace AccountManagementSystem
+﻿using System.Xml.Linq;
+
+namespace AccountManagementSystem
 {
+    //class Utilities<T>
+    //{
+    //    public static void PrintDetails(List<T> accounts)
+    //    {
+    //        foreach (var item in accounts)
+    //        {
+    //            Console.WriteLine(item);
+    //        }
+    //    }
+    //}
+
     internal class Program
     {
         static void Main(string[] args)
         {
             List<Account> accounts = new List<Account>();
+            //List<SavingAccount> savingAccounts = new List<SavingAccount>();
+
+            //Utilities<Account>.PrintDetails(accounts);
+            //Utilities<SavingAccount>.PrintDetails(savingAccounts);
 
             do
             {
@@ -44,6 +61,77 @@
 
                             accounts.Add(account);
                             Console.WriteLine("Add Account Successfully");
+                        }
+                        break;
+                    case '2':
+                        {
+                            Console.WriteLine("Enter Id: ");
+                            string id = Console.ReadLine();
+
+                            Console.WriteLine("Enter Name: ");
+                            string name = Console.ReadLine();
+
+                            Console.WriteLine("Enter Email: ");
+                            string email = Console.ReadLine();
+
+                            Console.WriteLine("Enter Password: ");
+                            string password = Console.ReadLine();
+
+                            Console.WriteLine("Enter Phone: ");
+                            string phone = Console.ReadLine();
+
+                            Console.WriteLine("Enter Age: ");
+                            int age = Convert.ToInt32(Console.ReadLine());
+
+                            SavingAccount account = new(id, "423432", "OM00000000423432", name, 0, phone, email, password, 30, 1,AccountType.SavingAccount);
+
+                            accounts.Add(account);
+                            Console.WriteLine("Add Saving Account Successfully");
+                        }
+                        break;
+                    case '3':
+                        {
+                            Console.WriteLine("Enter Your Account Number / Id");
+                            string query = Console.ReadLine();
+
+                            bool founded = false;
+
+                            foreach (var item in accounts)
+                            {
+                                if (item.Id == query || item.AccountNumber == query)
+                                {
+                                    Console.WriteLine("Enter Id: ");
+                                    string id = Console.ReadLine();
+
+                                    Console.WriteLine("Enter Name: ");
+                                    string name = Console.ReadLine();
+
+                                    Console.WriteLine("Enter Email: ");
+                                    string email = Console.ReadLine();
+
+                                    Console.WriteLine("Enter Password: ");
+                                    string password = Console.ReadLine();
+
+                                    Console.WriteLine("Enter Phone: ");
+                                    string phone = Console.ReadLine();
+
+                                    Console.WriteLine("Enter Age: ");
+                                    int age = Convert.ToInt32(Console.ReadLine());
+
+                                    item.Id = id;
+                                    item.Name = name;
+                                    item.Email = email;
+                                    item.Password = password;
+                                    item.Phone = phone;
+                                    item.Age = age;
+
+                                    Console.WriteLine("Update Account Successfully");
+                                    founded = true;
+                                }
+                            }
+
+                            if(!founded)
+                                Console.WriteLine("Not Founded Account");
                         }
                         break;
                 }
