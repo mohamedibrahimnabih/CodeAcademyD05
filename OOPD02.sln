@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveChallenge", "SolveChal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic", "Generic\Generic.csproj", "{923F8FF8-0559-4BC7-BA98-F245840EE86F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountManagementSystem", "AccountManagementSystem\AccountManagementSystem.csproj", "{C439506A-78C9-46DD-BF37-3B0C0BC603E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{923F8FF8-0559-4BC7-BA98-F245840EE86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923F8FF8-0559-4BC7-BA98-F245840EE86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923F8FF8-0559-4BC7-BA98-F245840EE86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C439506A-78C9-46DD-BF37-3B0C0BC603E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C439506A-78C9-46DD-BF37-3B0C0BC603E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C439506A-78C9-46DD-BF37-3B0C0BC603E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C439506A-78C9-46DD-BF37-3B0C0BC603E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

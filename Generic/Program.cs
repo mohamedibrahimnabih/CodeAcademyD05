@@ -1,20 +1,32 @@
 ﻿namespace Generic
 {
+    class Helper<T>// where T : class
+    {
+        public static void Swap(ref T x, ref T y)
+        {
+            T temp = x;
+            x = y;
+            y = temp;
+        }
+    }
+
     internal class Program
     {
-        static void Swap(ref int x, ref int y)
-        {
-            int temp = x;
-            x = y;
-            y = temp;
-        }
+        
 
-        static void Swap(ref double x, ref double y)
-        {
-            double temp = x;
-            x = y;
-            y = temp;
-        }
+        //static void Swap(ref double x, ref double y)
+        //{
+        //    double temp = x;
+        //    x = y;
+        //    y = temp;
+        //}
+
+        //static void Swap(ref string x, ref string y)
+        //{
+        //    string temp = x;
+        //    x = y;
+        //    y = temp;
+        //}
 
         static void Main(string[] args)
         {
@@ -25,7 +37,7 @@
             Console.WriteLine($"x: {x}");
             Console.WriteLine($"y: {y}");
 
-            Swap(ref x, ref y);
+            Helper<int>.Swap(ref x, ref y);
 
             Console.WriteLine("After Swapping");
             Console.WriteLine($"x: {x}");
@@ -38,7 +50,7 @@
             Console.WriteLine($"d1: {d1}");
             Console.WriteLine($"d2: {d2}");
 
-            Swap(ref d1, ref d2);
+            Helper<double>.Swap(ref d1, ref d2);
 
             Console.WriteLine("After Swapping");
             Console.WriteLine($"d1: {d1}");
@@ -51,7 +63,7 @@
             Console.WriteLine($"s1: {s1}");
             Console.WriteLine($"s2: {s2}");
 
-            Swap(ref s1, ref s2);
+            Helper<string>.Swap(ref s1, ref s2);
 
             Console.WriteLine("After Swapping");
             Console.WriteLine($"s1: {s1}");
