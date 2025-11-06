@@ -189,13 +189,20 @@ namespace AccountManagementSystem
                         break;
                     case 'Q':
                         {
-                            Console.WriteLine("Are Your sure? (Y/N)");
-                            string choice = Console.ReadLine();
+                            try
+                            {
+                                Console.WriteLine("Are Your sure? (Y/N)");
+                                string choice = Console.ReadLine();
 
-                            if(choice == "Y")
-                                Environment.Exit(0);
-                            else
-                                Console.WriteLine("good");
+                                if (choice == "Y")
+                                    Environment.Exit(0);
+                                else
+                                    Console.WriteLine("good");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Error: {ex.Message}");
+                            }
                         }
                         break;
                 }
