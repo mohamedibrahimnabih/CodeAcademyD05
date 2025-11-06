@@ -134,6 +134,70 @@ namespace AccountManagementSystem
                                 Console.WriteLine("Not Founded Account");
                         }
                         break;
+                    case '4':
+                        {
+                            Console.WriteLine("Enter Your Account Number / Id");
+                            string query = Console.ReadLine();
+
+                            bool founded = false;
+
+                            foreach (var item in accounts)
+                            {
+                                if(item.Id == query || item.AccountNumber == query)
+                                {
+                                    accounts.Remove(item);
+                                    Console.WriteLine("Remove Account Successfully");
+                                    founded = true;
+                                    break;
+                                }
+                            }
+
+                            if (!founded)
+                                Console.WriteLine("Not Founded Account");
+                        }
+                        break;
+                    case '5':
+                        {
+                            try
+                            {
+                                Console.WriteLine("Enter Your Account Number / Id");
+                                string query = Console.ReadLine();
+
+                                bool founded = false;
+
+                                foreach (var item in accounts)
+                                {
+                                    if(item.Id == query || item.AccountNumber == query)
+                                    {
+                                        Console.WriteLine($"Name: {item.Name}");
+                                        Console.WriteLine($"Name: {item.Phone}");
+                                        Console.WriteLine($"Name: {item.Id}");
+                                        Console.WriteLine($"Name: {item.Balance}");
+
+                                        founded = true;
+                                    }
+                                }
+
+                                if (!founded)
+                                    Console.WriteLine("Not Founded Account");
+                            }
+                            catch(Exception ex)
+                            {
+                                Console.WriteLine($"Error: {ex.Message}");
+                            }
+                        }
+                        break;
+                    case 'Q':
+                        {
+                            Console.WriteLine("Are Your sure? (Y/N)");
+                            string choice = Console.ReadLine();
+
+                            if(choice == "Y")
+                                Environment.Exit(0);
+                            else
+                                Console.WriteLine("good");
+                        }
+                        break;
                 }
 
             } while (true);
